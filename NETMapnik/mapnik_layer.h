@@ -37,6 +37,12 @@ namespace NETMapnik
 			void set(System::Boolean value);
 		}
 
+		property System::String^ GroupBy
+		{
+			System::String^ get();
+			void set(System::String^ value);
+		}
+
 		property System::Collections::Generic::IEnumerable<System::String^>^ Styles
 		{
 			System::Collections::Generic::IEnumerable<System::String^>^ get();

@@ -73,6 +73,15 @@ namespace NETMapnik
 		(*_layer)->set_cache_features(value);
 	}
 
+	System::String^ Layer::GroupBy::get()
+	{
+		return msclr::interop::marshal_as<System::String^>((*_layer)->group_by());
+	}
+	void Layer::GroupBy::set(System::String^ value)
+	{
+		(*_layer)->set_group_by(msclr::interop::marshal_as<std::string>(value));
+	}
+
 	System::Collections::Generic::IEnumerable<System::String^>^  Layer::Styles::get()
 	{
 		std::vector<std::string> const& style_names = (*_layer)->styles();
